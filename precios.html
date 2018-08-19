@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Concert+One|Damion" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Damion" rel="stylesheet">
+    <link rel="stylesheet" href="css/invie.css" />
+    <title> Precios de Tus mejores guitarras!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body>
+    <header id="header" class="header background"><!-- header  -->
+      <div class="contenedor">
+        <figure class="logotipo">   <!-- logotipo -->
+          <img src="images/invie.png" width="185" height="60" alt="invie logotipo" />
+        </figure>
+        <span class="burguer-button icon-menu" id="burguer-button"></span>
+        <nav class="menu" id="menu">    <!-- menu -->
+        <ul>
+          <li>
+            <a href="index.html"><strong>Home</strong></a>
+          </li>
+          <li>
+            <a href="index.html#guitarras"><strong>Guitarras</strong></a>
+          </li>
+          <li>
+            <a href="precios.html"><strong>Precios</strong></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="tabla">
+    <div class="contenedor">
+      <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Descripción</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Descripción</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+        </tr>
+        <tr>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+        </tr>
+        <tr>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+        </tr>
+        <tr>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+          <td>Invie classic</td>
+          <td>$100000</td>
+          <td>Guitarra Pro</td>
+        </tr>
+      </tbody>
+
+      </table>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="contacto">
+        <img src="images/invie-white.png" alt="logotipo blanco" />
+        <a href="tel:+58163852529"><strong>Telefono</strong><span>163852529</span></a>
+        <a href="mailto:inviecontacto@gmail.com"><strong>E-mail</strong><span>inviecontacto@gmail.com</span></a>
+      </div>
+      <form class="formulario">
+      <div class="col1">
+        <label for="nombre">Nombre</label>
+        <input type="text" required id ="nombre" name="nombre"/>
+        <label for="email">E-mail</label>
+        <input type="text" required id="email" name="email"/>
+      <div class="sexo">
+        <label for="mujer">
+          <input type="radio" id="mujer" checked name="sexo" value="mujer"/> Mujer
+        </label>
+        <label for="hombre">
+          <input type="radio" id="hombre" checked name="sexo" value="hombre" /> Hombre
+        </label>
+      </div>
+      <div class="intereses">
+          <label for="cotizacion">
+            <input type="checkbox" id="cotizacion" name="intereses" value="cotizacion" />Cotizacion
+          </label>
+          <label for="reclamos">
+            <input type="checkbox" id="reclamos" name="intereses" value="reclamos" />Reclamos
+          </label>
+          <label for="comentarios">
+            <input type="checkbox" id="comentarios" name="intereses" value="comentarios"/>Comentarios
+          </label>
+          <label for="otros">
+            <input type="checkbox" id="otros" name="intereses" value="otros" />Otros
+          </label>
+      </div>
+      </div>
+      <div class="col2">
+          <label for="comentarios">Comentarios</label>
+          <textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+          <input type="submit" class="button" value="enviar" />
+      </div>
+      </form>
+      </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js">
+  </script>
+  <script>
+    var consulta = window.matchMedia("(max-width: 500px)");
+    consulta.addListener(mediaQuery);
+
+    var $burguerButton = document.getElementById('burguer-button');
+    var $menu = document.getElementById('menu');
+    function toggleMenu() {
+      $menu.classList.toggle("active")
+      document.body.classList.toggle("opened")
+      $burguerButton.classList.toggle("icon-close");
+    };
+    // mostrar menu desplazando
+    function showM() {
+      $menu.classList.add("active")
+      document.body.classList.add("opened")
+      $burguerButton.classList.add("icon-close")
+    };
+    function hideM() {
+      $menu.classList.remove("active")
+      document.body.classList.remove("opened")
+      $burguerButton.classList.remove("icon-close")
+    };
+
+
+
+    function mediaQuery() {
+      if(consulta.matches) {
+        $burguerButton.style.display= "inline-block";
+        $burguerButton.addEventListener('click', toggleMenu);
+        console.log("se cumplio la condicion");
+      }
+
+      else {
+          console.log("no se cumplio la condicion");
+          $burguerButton.style.display= "none";
+          $burguerButton.removeEventListener('click', toggleMenu);
+
+        }
+      }
+      mediaQuery();
+      var bLazy = new Blazy({
+      selector: "img"
+});
+
+// ---- gestos con hammerJS ------
+  var $body = document.body;
+  var $gestos = new Hammer($body);
+
+  $gestos.on("swiperight",showM);
+  $gestos.on("swipeleft",hideM);
+</script>
+
+</body>
+</html>
