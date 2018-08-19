@@ -373,7 +373,6 @@
 {
 	border-radius: 10px;
 	background: black;
-}
 
 }
 }
@@ -449,9 +448,7 @@
        display: block;
        width: 100%;
      }
-     .burguerButton{
-       overflow: hidden;
-     }
+
 
      .opened{
        overflow: hidden;
@@ -517,6 +514,16 @@
        width: auto;
        max-width: 100%;
 
+     }
+     .contacto img{
+       margin-left: 40px;
+       margin-top: 30px;
+     }
+     .contacto a{
+       margin-top: 10px;
+       display: block;
+      
+       margin-left: 40px;
      }
     /* video */
     .video-demo{
